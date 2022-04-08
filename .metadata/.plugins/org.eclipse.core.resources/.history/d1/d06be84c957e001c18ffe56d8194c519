@@ -1,0 +1,16 @@
+
+import javax.swing.JFrame;
+
+public class game extends JFrame{
+	
+	public game() {
+		setSize(400,400);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		System.out.print("Start");
+		
+		game GAME = new game();
+	}
+
+}

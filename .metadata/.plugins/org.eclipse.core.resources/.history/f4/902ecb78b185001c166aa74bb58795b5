@@ -1,0 +1,23 @@
+
+import javax.swing.JFrame;
+
+public class game extends JFrame{
+	
+	private GameManager GAMEMANAGER;
+	
+	public game() {
+		setSize(400,400);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		GAMEMANAGER = new GameManager();
+		add(GAMEMANAGER);
+		
+	}
+	public static void main(String[] args) {
+		System.out.print("Start");
+		
+		game GAME = new game();
+	}
+
+}

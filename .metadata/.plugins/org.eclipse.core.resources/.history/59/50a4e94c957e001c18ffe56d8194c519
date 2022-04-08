@@ -1,0 +1,13 @@
+
+public class Start {
+
+	public static void main(String[] args) {
+		System.out.print(GameManager.SCREEN_WIDTH);
+		System.out.print(GameManager.SCREEN_HIGHT);
+		
+		
+		
+
+	}
+
+}
