@@ -9,20 +9,22 @@ public class Exe {
 
 	private static JFrame frame;
 	
+	
+	
+	// top
 	private static void setupStartButton(Container pane) {
 		JButton button = new JButton();
 		
-		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
-				GameManager.SCREEN_WIDTH/5));
-		button.setIcon(new ImageIcon("Julle_homepage.jpg"));
+		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT*2, 
+				GameManager.SCREEN_WIDTH/8));
+		button.setIcon(new ImageIcon("Exit.jpg"));
 		
 		button.addActionListener(new ActionListener() 
 		{
 			
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				JOptionPane.showMessageDialog(null, "oo");
-				
+
 			}
 			
 		});
@@ -30,66 +32,47 @@ public class Exe {
 	}
 	
 	
-	//right button
-    private static void setupRightButton(Container pane) {
-		JButton button = new JButton();
+	//right label
+    private static void setupRightlabel(Container pane) {
+		JButton label = new JButton();
 		
-		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT/3, 
-				GameManager.SCREEN_WIDTH/5));
-		button.setIcon(new ImageIcon("Julle_homepage.jpg"));
-		
-		button.addActionListener(new ActionListener() 
-		{
-			
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Q BUTTON IS PRESSED");
-				
-			}
-			
-		});
-		pane.add(button, BorderLayout.LINE_END);	
-    }
-    
-    
-//    Middle
-    private static void setupCenterImage(Container pane) {
-    	JLabel label = new JLabel();
-    	
-    	label.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
-				GameManager.SCREEN_WIDTH/5));
+		label.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
+				GameManager.SCREEN_WIDTH));
 		label.setIcon(new ImageIcon("Julle_homepage.jpg"));
-		pane.add(label, BorderLayout.CENTER);
-    }
-    
-    
-    
-	//left button
-	private static void setupLeftButton(Container pane)  {
 		
-		JButton button = new JButton();
-		
-		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT/5, 
-				GameManager.SCREEN_WIDTH/3));
-		button.setIcon(new ImageIcon("Julle_homepage.jpg"));
-		
-		button.addActionListener(new ActionListener() 
+		label.addActionListener(new ActionListener() 
 		{
 			
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				JOptionPane.showMessageDialog(null, "oo");
-				try {
-					GameManager.stream.close();
-					
-				}
-				catch(Exception ex) {
-					ex.printStackTrace();
-				}
+				
 				
 			}
 			
 		});
-		pane.add(button, BorderLayout.LINE_START);	
+		pane.add(label, BorderLayout.LINE_END);	
+    }
+    
+    
+	//left label
+	private static void setupLeftlabel(Container pane)  {
+		
+		JButton label = new JButton();
+		
+		label.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
+				GameManager.SCREEN_WIDTH));
+		label.setIcon(new ImageIcon("Julle_homepage.jpg"));
+		
+		label.addActionListener(new ActionListener() 
+		{
+			
+			public void actionPerformed(ActionEvent e) {
+			
+
+				
+			}
+			
+		});
+		pane.add(label, BorderLayout.LINE_START);	
 	}
 	
 	
@@ -100,13 +83,14 @@ public class Exe {
 		
 		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
 				GameManager.SCREEN_WIDTH/5));
-		button.setIcon(new ImageIcon("Julle_homepage.jpg"));
+		button.setIcon(new ImageIcon("Play.png"));
 		
 		button.addActionListener(new ActionListener() 
 		{
 			
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("ABOUT BUTTON IS PRESSED");
+				frame.dispose();
+				GamePlan gameplan = new GamePlan();
 				
 			}
 			
@@ -115,13 +99,15 @@ public class Exe {
 		
 	}
 	
+	
+	
+	
 	public static void addComponent(Container pane) {
 		pane.setComponentOrientation(java.awt.ComponentOrientation.LEFT_TO_RIGHT);
 		
 		setupStartButton(pane);
-		setupCenterImage(pane);
-		setupLeftButton(pane);
-		setupRightButton(pane);
+		setupLeftlabel(pane);
+		setupRightlabel(pane);
 		setupBottomButton(pane);
 		
 		
@@ -133,7 +119,11 @@ public class Exe {
 		frame.pack();
 		frame.setVisible(true);
 		
+		
+		
 	}
+
+	
 	public Exe() {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
