@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Start extends JPanel implements Runnable{
 	private JFrame window = new JFrame();
-	private String imagePath = "Julle_homepage.jpg";
+	private String imagePath = "Images//Julle_homepage.jpg";
 	private String audioFileName = "GameMusic.mav.wav";
 	
 	public Start() {	

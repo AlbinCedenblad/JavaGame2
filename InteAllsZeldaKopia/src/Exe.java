@@ -17,7 +17,7 @@ public class Exe {
 		
 		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT*2, 
 				GameManager.SCREEN_WIDTH/8));
-		button.setIcon(new ImageIcon("Exit.jpg"));
+		button.setIcon(new ImageIcon("Images//Exit.jpg"));
 		
 		button.addActionListener(new ActionListener() 
 		{
@@ -38,7 +38,7 @@ public class Exe {
 		
 		label.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
 				GameManager.SCREEN_WIDTH));
-		label.setIcon(new ImageIcon("Julle_homepage.jpg"));
+		label.setIcon(new ImageIcon("Images//Julle_homepage.jpg"));
 		
 		label.addActionListener(new ActionListener() 
 		{
@@ -60,7 +60,7 @@ public class Exe {
 		
 		label.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
 				GameManager.SCREEN_WIDTH));
-		label.setIcon(new ImageIcon("Julle_homepage.jpg"));
+		label.setIcon(new ImageIcon("Images//Julle_homepage.jpg"));
 		
 		label.addActionListener(new ActionListener() 
 		{
@@ -83,7 +83,7 @@ public class Exe {
 		
 		button.setPreferredSize(new Dimension(GameManager.SCREEN_HIGHT, 
 				GameManager.SCREEN_WIDTH/5));
-		button.setIcon(new ImageIcon("Play.png"));
+		button.setIcon(new ImageIcon("Images//Play.png"));
 		
 		button.addActionListener(new ActionListener() 
 		{
