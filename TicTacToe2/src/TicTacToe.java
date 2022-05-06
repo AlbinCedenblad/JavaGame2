@@ -308,42 +308,187 @@ public class TicTacToe {
 			}
 			
 			
-			winCon WinCon = new winCon();
-			String result = WinCon.checkWinner();
-			if(result.length() > 0) {
-				System.out.println(result);
-				break;
-			}
+		
+			
+			
 			
 			
 			placePiece(gameBoard, playerPos, "player");
+			
+			winCon WinCon = new winCon();
+			String result = WinCon.checkWinner();
+			if(result.length() > 0) {
+				printGameBoard(gameBoard);
+				System.out.println(result);
+				break;
+			}
 			
 			//CPU lvl3
 			
 			Random rand = new Random();
 			int cpuPos = rand.nextInt(25) + 1;
 			
+
+			
+			if (playerPos == 1 || playerPos == 2 || playerPos == 3) {
+				cpuPos = rand.nextInt(8 - 1) + 1;
+				while (cpuPos == 5) {
+					cpuPos = rand.nextInt(8 - 1) + 1;
+				}
+			}
+			
+			if (playerPos == 3 || playerPos == 4 || playerPos == 5) {
+				cpuPos = rand.nextInt(10 - 1) + 1;
+				while  (cpuPos == 1 || cpuPos == 6 || cpuPos == 7) {
+					cpuPos = rand.nextInt(10 - 1) + 1;
+				}
+			}
+			
+			
+		    if (playerPos == 6 || playerPos == 7 || playerPos == 8 ) {
+				cpuPos = rand.nextInt(15 - 1) + 1;
+				while  (cpuPos == 4 || cpuPos == 5 || cpuPos == 15 || cpuPos == 14 || cpuPos == 10) {
+					cpuPos = rand.nextInt(15 - 1) + 1;
+				}
+			}
+		    
+		    if ( playerPos == 8 || playerPos == 9 || playerPos == 10) {
+				cpuPos = rand.nextInt(15 - 1) + 1;
+				while  (cpuPos == 1 || cpuPos == 6 || cpuPos == 11 || cpuPos == 2 || cpuPos == 12) {
+					cpuPos = rand.nextInt(15 - 1) + 1;
+				}
+			}
+			
+			
+		    if (playerPos == 11 || playerPos == 12|| playerPos == 13 ) {
+				cpuPos = rand.nextInt(20 - 6) + 6;
+				while  (cpuPos == 9 || cpuPos == 19 || cpuPos == 20 || cpuPos == 10 || cpuPos == 15) {
+					cpuPos = rand.nextInt(20 - 6) + 6;
+				}
+		    }
+		    if (playerPos == 13 || playerPos == 14 || playerPos == 15) {
+				cpuPos = rand.nextInt(20 - 6) + 6;
+				while  (cpuPos == 11 || cpuPos == 6 || cpuPos == 7 || cpuPos == 17 || cpuPos == 16) {
+					cpuPos = rand.nextInt(20 - 6) + 6;
+				}
+			}
+			
+			if (playerPos == 16 || playerPos == 17 || playerPos == 18 ) {
+				cpuPos = rand.nextInt(25 - 11) + 11;
+				while  (cpuPos == 20 || cpuPos == 25 || cpuPos == 24 || cpuPos == 15 || cpuPos == 14) {
+					cpuPos = rand.nextInt(25 - 11) + 11;
+				}
+			}
+			if ( playerPos == 18 || playerPos == 19 || playerPos == 20) {
+				cpuPos = rand.nextInt(25 - 11) + 11;
+				while  (cpuPos == 16 || cpuPos == 11 || cpuPos == 12 || cpuPos == 21 || cpuPos == 22) {
+					cpuPos = rand.nextInt(25 - 11) + 11;
+				}
+			}
+			
+			
+			if (playerPos == 21 || playerPos == 22 || playerPos == 23) {
+				cpuPos = rand.nextInt(25 - 16) + 16;
+				while  (cpuPos == 25 || cpuPos == 20 || cpuPos == 19) {
+					cpuPos = rand.nextInt(25 - 16) + 16;
+				}
+			}
+			if (playerPos == 23 || playerPos == 24 || playerPos == 25) {
+				cpuPos = rand.nextInt(25 - 16) + 16;
+				while  (cpuPos == 21 || cpuPos == 16 || cpuPos == 17 ) {
+					cpuPos = rand.nextInt(25 - 16) + 16;
+				}
+			}
+			
+			win WIN = new win();
+			int ChecksWin = WIN.cpuWin();
+			
+			if(ChecksWin != 0) {
+				cpuPos = ChecksWin;
+				
+				}
+			
 			stop STOP = new stop();
 			int Checkstop = STOP.stopPlayer();
-			if(Checkstop != 0) {
+			
+			if(Checkstop != 0)  {
 				cpuPos = Checkstop;
 				}
 			
-			
-			
-			
-			
 			while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)){
 				
-				cpuPos = rand.nextInt(25) + 1;
-				 Checkstop = STOP.stopPlayer();
-				 if(Checkstop != 0) {
-						cpuPos = Checkstop;
-						
-						}
+				if (playerPos == 1 || playerPos == 2 || playerPos == 3) {
+					cpuPos = rand.nextInt(8 - 1) + 1;
+					while (cpuPos == 5) {
+						cpuPos = rand.nextInt(8 - 1) + 1;
+					}
+				}
+				
+				if (playerPos == 3 || playerPos == 4 || playerPos == 5) {
+					cpuPos = rand.nextInt(10 - 1) + 1;
+					while  (cpuPos == 1 || cpuPos == 6 || cpuPos == 7) {
+						cpuPos = rand.nextInt(10 - 1) + 1;
+					}
+				}
 				
 				
+			    if (playerPos == 6 || playerPos == 7 || playerPos == 8 ) {
+					cpuPos = rand.nextInt(15 - 1) + 1;
+					while  (cpuPos == 4 || cpuPos == 5 || cpuPos == 15 || cpuPos == 14 || cpuPos == 10) {
+						cpuPos = rand.nextInt(15 - 1) + 1;
+					}
+				}
+			    
+			    if ( playerPos == 8 || playerPos == 9 || playerPos == 10) {
+					cpuPos = rand.nextInt(15 - 1) + 1;
+					while  (cpuPos == 1 || cpuPos == 6 || cpuPos == 11 || cpuPos == 2 || cpuPos == 12) {
+						cpuPos = rand.nextInt(15 - 1) + 1;
+					}
+				}
+				
+				
+			    if (playerPos == 11 || playerPos == 12|| playerPos == 13 ) {
+					cpuPos = rand.nextInt(20 - 6) + 6;
+					while  (cpuPos == 9 || cpuPos == 19 || cpuPos == 20 || cpuPos == 10 || cpuPos == 15) {
+						cpuPos = rand.nextInt(20 - 6) + 6;
+					}
+			    }
+			    if (playerPos == 13 || playerPos == 14 || playerPos == 15) {
+					cpuPos = rand.nextInt(20 - 6) + 6;
+					while  (cpuPos == 11 || cpuPos == 6 || cpuPos == 7 || cpuPos == 17 || cpuPos == 16) {
+						cpuPos = rand.nextInt(20 - 6) + 6;
+					}
+				}
+				
+				if (playerPos == 16 || playerPos == 17 || playerPos == 18 ) {
+					cpuPos = rand.nextInt(25 - 11) + 11;
+					while  (cpuPos == 20 || cpuPos == 25 || cpuPos == 24 || cpuPos == 15 || cpuPos == 14) {
+						cpuPos = rand.nextInt(25 - 11) + 11;
+					}
+				}
+				if ( playerPos == 18 || playerPos == 19 || playerPos == 20) {
+					cpuPos = rand.nextInt(25 - 11) + 11;
+					while  (cpuPos == 16 || cpuPos == 11 || cpuPos == 12 || cpuPos == 21 || cpuPos == 22) {
+						cpuPos = rand.nextInt(25 - 11) + 11;
+					}
+				}
+				
+				
+				if (playerPos == 21 || playerPos == 22 || playerPos == 23) {
+					cpuPos = rand.nextInt(25 - 16) + 16;
+					while  (cpuPos == 25 || cpuPos == 20 || cpuPos == 19) {
+						cpuPos = rand.nextInt(25 - 16) + 16;
+					}
+				}
+				if (playerPos == 23 || playerPos == 24 || playerPos == 25) {
+					cpuPos = rand.nextInt(25 - 16) + 16;
+					while  (cpuPos == 21 || cpuPos == 16 || cpuPos == 17 ) {
+						cpuPos = rand.nextInt(25 - 16) + 16;
+					}
+				}
 			}
+			
+			
 			
 			placePiece(gameBoard, cpuPos, "cpu");
 			

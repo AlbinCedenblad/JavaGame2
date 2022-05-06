@@ -95,7 +95,7 @@ public class winCon extends TicTacToe {
 				return"CPU win";
 			}
 			else if(playerPositions.size() + cpuPositions.size() == 25) {
-				return"rematch";
+				return"No winner3";
 			}
 			
 		}
